@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{96858F12-06FC-41DC-98FB-1593B502F373}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>horizon</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <SpectreMitigation>false</SpectreMitigation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <SpectreMitigation>false</SpectreMitigation>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)\x64\debug\</IntDir>
+    <OutDir>$(SolutionDir)bin\x64\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\x64\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)\x64\release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>
+      </SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <ExceptionHandling>false</ExceptionHandling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <FloatingPointExceptions>
+      </FloatingPointExceptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+    <MASM>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="constant\character.hpp" />
+    <ClInclude Include="constant\secure_string.hpp" />
+    <ClInclude Include="core\map_data.hpp" />
+    <ClInclude Include="core\mutex.hpp" />
+    <ClInclude Include="core\no_copy.hpp" />
+    <ClInclude Include="core\no_move.hpp" />
+    <ClInclude Include="core\singleton.hpp" />
+    <ClInclude Include="core\timer.hpp" />
+    <ClInclude Include="constant\hash.hpp" />
+    <ClInclude Include="constant\string.hpp" />
+    <ClInclude Include="graphics\color.hpp" />
+    <ClInclude Include="graphics\renderer.hpp" />
+    <ClInclude Include="hde\hde64.hpp" />
+    <ClInclude Include="hde\table32.hpp" />
+    <ClInclude Include="hde\table64.hpp" />
+    <ClInclude Include="imgui\imconfig.hpp" />
+    <ClInclude Include="imgui\imgui.hpp" />
+    <ClInclude Include="imgui\imgui_impl_dx11.hpp" />
+    <ClInclude Include="imgui\imgui_impl_win32.hpp" />
+    <ClInclude Include="imgui\imgui_internal.hpp" />
+    <ClInclude Include="imgui\imgui_shader_dx11.hpp" />
+    <ClInclude Include="imgui\imstb_rectpack.hpp" />
+    <ClInclude Include="imgui\imstb_textedit.hpp" />
+    <ClInclude Include="imgui\imstb_truetype.hpp" />
+    <ClInclude Include="include\auto.hpp" />
+    <ClInclude Include="include\base.hpp" />
+    <ClInclude Include="include\win32.hpp" />
+    <ClInclude Include="memory\arg_stack.hpp" />
+    <ClInclude Include="memory\detour_hook.hpp" />
+    <ClInclude Include="memory\macro.hpp" />
+    <ClInclude Include="memory\operation.hpp" />
+    <ClInclude Include="memory\scan.hpp" />
+    <ClInclude Include="memory\secure_call.hpp" />
+    <ClInclude Include="memory\system_call.hpp" />
+    <ClInclude Include="memory\vftable_hook.hpp" />
+    <ClInclude Include="vcruntime\dll_dllmain.hpp" />
+    <ClInclude Include="vcruntime\initializers.hpp" />
+    <ClInclude Include="vcruntime\internal_shared.hpp" />
+    <ClInclude Include="vcruntime\memory.hpp" />
+    <ClInclude Include="vcruntime\security_cookie.hpp" />
+    <ClInclude Include="vcruntime\thread_local_storage.hpp" />
+    <ClInclude Include="vcruntime\thread_safe_statics.hpp" />
+    <ClInclude Include="win32\basic.hpp" />
+    <ClInclude Include="win32\core_types.hpp" />
+    <ClInclude Include="win32\file.hpp" />
+    <ClInclude Include="win32\input_manager.hpp" />
+    <ClInclude Include="win32\math.hpp" />
+    <ClInclude Include="win32\sdk\access_mask.hpp" />
+    <ClInclude Include="win32\sdk\activation_context_stack.hpp" />
+    <ClInclude Include="win32\sdk\alternative_architecture_type.hpp" />
+    <ClInclude Include="win32\sdk\constant_section.hpp" />
+    <ClInclude Include="win32\sdk\event_basic_information.hpp" />
+    <ClInclude Include="win32\sdk\event_information_class.hpp" />
+    <ClInclude Include="win32\sdk\event_type.hpp" />
+    <ClInclude Include="win32\sdk\file_basic_information.hpp" />
+    <ClInclude Include="win32\sdk\file_directory_information.hpp" />
+    <ClInclude Include="win32\sdk\file_id_both_dir_information.hpp" />
+    <ClInclude Include="win32\sdk\file_information_class.hpp" />
+    <ClInclude Include="win32\sdk\file_standard_information.hpp" />
+    <ClInclude Include="win32\sdk\gdi_teb_batch.hpp" />
+    <ClInclude Include="win32\sdk\guid.hpp" />
+    <ClInclude Include="win32\sdk\handle.hpp" />
+    <ClInclude Include="win32\sdk\image_base_relocation.hpp" />
+    <ClInclude Include="win32\sdk\image_data_directory.hpp" />
+    <ClInclude Include="win32\sdk\image_dos_header.hpp" />
+    <ClInclude Include="win32\sdk\image_export_directory.hpp" />
+    <ClInclude Include="win32\sdk\image_file_header.hpp" />
+    <ClInclude Include="win32\sdk\image_import_by_name.hpp" />
+    <ClInclude Include="win32\sdk\image_import_descriptor.hpp" />
+    <ClInclude Include="win32\sdk\image_nt_headers.hpp" />
+    <ClInclude Include="win32\sdk\image_optional_header.hpp" />
+    <ClInclude Include="win32\sdk\image_relocation.hpp" />
+    <ClInclude Include="win32\sdk\image_runtime_function_entry.hpp" />
+    <ClInclude Include="win32\sdk\image_section_header.hpp" />
+    <ClInclude Include="win32\sdk\image_thunk_data.hpp" />
+    <ClInclude Include="win32\sdk\io_apc_routine.hpp" />
+    <ClInclude Include="win32\sdk\io_status_block.hpp" />
+    <ClInclude Include="win32\sdk\ksystem_time.hpp" />
+    <ClInclude Include="win32\sdk\kuser_shared_data.hpp" />
+    <ClInclude Include="win32\sdk\memory_basic_information.hpp" />
+    <ClInclude Include="win32\sdk\memory_enclave_image_information.hpp" />
+    <ClInclude Include="win32\sdk\memory_frame_information.hpp" />
+    <ClInclude Include="win32\sdk\memory_image_information.hpp" />
+    <ClInclude Include="win32\sdk\memory_information_class.hpp" />
+    <ClInclude Include="win32\sdk\memory_region_information.hpp" />
+    <ClInclude Include="win32\sdk\memory_shared_commit_information.hpp" />
+    <ClInclude Include="win32\sdk\memory_working_set_block.hpp" />
+    <ClInclude Include="win32\sdk\memory_working_set_ex_block.hpp" />
+    <ClInclude Include="win32\sdk\memory_working_set_ex_information.hpp" />
+    <ClInclude Include="win32\sdk\memory_working_set_ex_location.hpp" />
+    <ClInclude Include="win32\sdk\memory_working_set_information.hpp" />
+    <ClInclude Include="win32\sdk\mutant_basic_information.hpp" />
+    <ClInclude Include="win32\sdk\mutant_information_class.hpp" />
+    <ClInclude Include="win32\sdk\nt_product_type.hpp" />
+    <ClInclude Include="win32\sdk\object_attributes.hpp" />
+    <ClInclude Include="win32\sdk\object_basic_information.hpp" />
+    <ClInclude Include="win32\sdk\object_information_class.hpp" />
+    <ClInclude Include="win32\sdk\object_name_information.hpp" />
+    <ClInclude Include="win32\sdk\object_wait_type.hpp" />
+    <ClInclude Include="win32\sdk\constant_page.hpp" />
+    <ClInclude Include="win32\sdk\peb.hpp" />
+    <ClInclude Include="win32\sdk\peb_ldr_data.hpp" />
+    <ClInclude Include="win32\sdk\constant_region.hpp" />
+    <ClInclude Include="win32\sdk\rtl_activation_context_stack_frame.hpp" />
+    <ClInclude Include="win32\sdk\rtl_balanced_node.hpp" />
+    <ClInclude Include="win32\sdk\client_id.hpp" />
+    <ClInclude Include="win32\sdk\exception_registration_record.hpp" />
+    <ClInclude Include="win32\sdk\large_integer.hpp" />
+    <ClInclude Include="win32\sdk\ldr_data_table_entry.hpp" />
+    <ClInclude Include="win32\sdk\list_entry.hpp" />
+    <ClInclude Include="win32\sdk\nt_tib.hpp" />
+    <ClInclude Include="win32\sdk\rtl_condition_variable.hpp" />
+    <ClInclude Include="win32\sdk\rtl_critical_section.hpp" />
+    <ClInclude Include="win32\sdk\rtl_critical_section_debug.hpp" />
+    <ClInclude Include="win32\sdk\rtl_heap_parameters.hpp" />
+    <ClInclude Include="win32\sdk\section_basic_information.hpp" />
+    <ClInclude Include="win32\sdk\section_information_class.hpp" />
+    <ClInclude Include="win32\sdk\section_inherit.hpp" />
+    <ClInclude Include="win32\sdk\string.hpp" />
+    <ClInclude Include="win32\sdk\teb.hpp" />
+    <ClInclude Include="win32\sdk\ularge_integer.hpp" />
+    <ClInclude Include="win32\sdk\unicode_string.hpp" />
+    <ClInclude Include="win32\sdk\xstate_configuration.hpp" />
+    <ClInclude Include="win32\sdk\xstate_feature.hpp" />
+    <ClInclude Include="win32\trace.hpp" />
+    <ClInclude Include="win32\image.hpp" />
+    <ClInclude Include="win32\process.hpp" />
+    <ClInclude Include="win32\string.hpp" />
+    <ClInclude Include="win32\time.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="core\map_data.cpp" />
+    <ClCompile Include="core\mutex.cpp" />
+    <ClCompile Include="core\timer.cpp" />
+    <ClCompile Include="graphics\color.cpp" />
+    <ClCompile Include="graphics\renderer.cpp" />
+    <ClCompile Include="hde\hde64.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="imgui\imgui_shader_dx11.cpp" />
+    <ClCompile Include="imgui\imgui_widgets.cpp" />
+    <ClCompile Include="memory\detour_hook.cpp" />
+    <ClCompile Include="memory\operation.cpp" />
+    <ClCompile Include="memory\scan.cpp" />
+    <ClCompile Include="memory\vftable_hook.cpp" />
+    <ClCompile Include="vcruntime\dll_dllmain.cpp" />
+    <ClCompile Include="vcruntime\initializers.cpp" />
+    <ClCompile Include="vcruntime\memory.cpp" />
+    <ClCompile Include="vcruntime\operator.cpp" />
+    <ClCompile Include="vcruntime\security_cookie.cpp" />
+    <ClCompile Include="vcruntime\thread_safe_statics.cpp" />
+    <ClCompile Include="vcruntime\thread_local_storage.cpp" />
+    <ClCompile Include="win32\basic.cpp" />
+    <ClCompile Include="win32\file.cpp" />
+    <ClCompile Include="win32\input_manager.cpp" />
+    <ClCompile Include="win32\math.cpp" />
+    <ClCompile Include="win32\trace.cpp" />
+    <ClCompile Include="win32\image.cpp" />
+    <ClCompile Include="win32\process.cpp" />
+    <ClCompile Include="win32\string.cpp" />
+    <ClCompile Include="win32\time.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="memory\x64\code_secure_call.asm" />
+    <MASM Include="memory\x64\code_system_call.asm" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>
