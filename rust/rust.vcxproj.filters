@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main\entry.cpp" />
+    <ClCompile Include="unity\sdk.cpp" />
+    <ClCompile Include="main\vcruntime.cpp" />
+    <ClCompile Include="rust\core.cpp" />
+    <ClCompile Include="unity\il2cpp\il2cpp-api.cpp" />
+    <ClCompile Include="rust\hooks\resize_buffers.cpp" />
+    <ClCompile Include="rust\hooks\present.cpp" />
+    <ClCompile Include="rust\il2cpp.cpp" />
+    <ClCompile Include="unity\engine\matrix4x4.cpp" />
+    <ClCompile Include="unity\engine\vector2.cpp" />
+    <ClCompile Include="unity\engine\vector3.cpp" />
+    <ClCompile Include="unity\engine\math.cpp" />
+    <ClCompile Include="options\storage.cpp" />
+    <ClCompile Include="rust\features\visuals.cpp" />
+    <ClCompile Include="rust\features\aimbot.cpp" />
+    <ClCompile Include="rust\features\user_interface.cpp" />
+    <ClCompile Include="rust\hooks\dispatch_message.cpp" />
+    <ClCompile Include="unity\object\unity_engine.cpp" />
+    <ClCompile Include="rust\hooks\is_admin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="unity\sdk.hpp" />
+    <ClInclude Include="unity\il2cpp\il2cpp-api-types.hpp" />
+    <ClInclude Include="unity\il2cpp\il2cpp-blob.hpp" />
+    <ClInclude Include="unity\il2cpp\il2cpp-config.hpp" />
+    <ClInclude Include="unity\il2cpp\il2cpp-config-api.hpp" />
+    <ClInclude Include="unity\il2cpp\il2cpp-metadata.hpp" />
+    <ClInclude Include="unity\il2cpp\il2cpp-object-internals.hpp" />
+    <ClInclude Include="unity\il2cpp\il2cpp-runtime-metadata.hpp" />
+    <ClInclude Include="unity\il2cpp\il2cpp-class-internals.hpp" />
+    <ClInclude Include="rust\core.hpp" />
+    <ClInclude Include="unity\il2cpp\il2cpp-api.hpp" />
+    <ClInclude Include="unity\il2cpp\il2cpp-api-functions.hpp" />
+    <ClInclude Include="rust\hooks\resize_buffers.hpp" />
+    <ClInclude Include="rust\hooks\present.hpp" />
+    <ClInclude Include="rust\il2cpp.hpp" />
+    <ClInclude Include="unity\engine\vector2.hpp" />
+    <ClInclude Include="unity\engine\vector3.hpp" />
+    <ClInclude Include="unity\engine\matrix4x4.hpp" />
+    <ClInclude Include="unity\engine\math.hpp" />
+    <ClInclude Include="options\storage.hpp" />
+    <ClInclude Include="rust\features\visuals.hpp" />
+    <ClInclude Include="rust\features\aimbot.hpp" />
+    <ClInclude Include="rust\features\user_interface.hpp" />
+    <ClInclude Include="rust\hooks\dispatch_message.hpp" />
+    <ClInclude Include="rust\steam.hpp" />
+    <ClInclude Include="unity\object\system.hpp" />
+    <ClInclude Include="unity\object\unity_engine.hpp" />
+    <ClInclude Include="unity\object\rust.hpp" />
+    <ClInclude Include="rust\hooks\is_admin.hpp" />
+  </ItemGroup>
+</Project>
